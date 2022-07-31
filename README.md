@@ -1,8 +1,13 @@
 # Acerca
 Esta aplicación te permite realizar una busqueda avanzada en mercadolibre. En especifico, podes buscar un vendedor que tenga multiples items que necesitas comprar, especial para ahorrar en envios si sos del interior.
 
+[Demo](https://enzo418.github.io/buscador-meli/)
+
 ## Uso de la api de ML
 Este solo utiliza la api publica de mercadolibre para realizar las busquedas, no se almacena ningun dato.
+
+## Librerias
+Utiliza react con typescript y los compontentes de UI  de [MUI](https://mui.com/) (material UI).
 
 
 # Create React initial readme
