@@ -62,8 +62,12 @@ export default class HomePage extends React.Component<IPlaceHolder, IState> {
 
     // search
     this.setState(({ searching: true, searchResults: null }));
-    const results = await SearchMeli(items, this.state.client, 100);
-    this.setState(({ searchResults: results, searching: false }));
+    try {
+      const results = await SearchMeli(items, this.state.client, 100);
+      this.setState(({ searchResults: results, searching: false }));
+    } catch (error) {
+      console.error("Error in search", error);
+    }
   }
 
   deleteItem(index: number) {
