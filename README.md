@@ -1,7 +1,11 @@
-# Getting Started with Create React App
+# Acerca
+Esta aplicación te permite realizar una busqueda avanzada en mercadolibre. En especifico, podes buscar un vendedor que tenga multiples items que necesitas comprar, especial para ahorrar en envios si sos del interior.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Uso de la api de ML
+Este solo utiliza la api publica de mercadolibre para realizar las busquedas, no se almacena ningun dato.
 
+
+# Create React initial readme
 ## Available Scripts
 
 In the project directory, you can run:
