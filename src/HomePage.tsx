@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import IHttpClient from './http/IHttpClient';
 import HttpClient from './http/HttpClient';
-import { Button, Chip, CircularProgress, Divider, Grid, IconButton, TextField } from '@mui/material';
+import { Alert, Button, Chip, CircularProgress, Divider, Grid, IconButton, Snackbar, TextField } from '@mui/material';
 import SearchMeli, { ISearchResult } from './search';
 import SellerResultsLists from './SellersResultsList';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -20,6 +20,7 @@ interface IState {
   searchResults: ISearchResult[] | null;
   searching: boolean;
   region: string;
+  error: any;
 };
 
 export default class HomePage extends React.Component<IPlaceHolder, IState> {
@@ -28,7 +29,8 @@ export default class HomePage extends React.Component<IPlaceHolder, IState> {
     items: [""],
     searchResults: null,
     searching: false,
-    region: "MLA"
+    region: "MLA",
+    error: null
   }
 
   constructor(p: any) {
@@ -67,6 +69,7 @@ export default class HomePage extends React.Component<IPlaceHolder, IState> {
       this.setState(({ searchResults: results, searching: false }));
     } catch (error) {
       console.error("Error in search", error);
+      this.setState(({ error, searching: false }));
     }
   }
 
@@ -132,6 +135,14 @@ export default class HomePage extends React.Component<IPlaceHolder, IState> {
             <CircularProgress sx={{ right: "50%", position: "absolute" }} />
           }
         </div>
+
+        <Snackbar open={this.state.error !== null} autoHideDuration={6000}>
+          <Alert onClose={() => this.setState(({error:null}))} severity="error" sx={{ width: '100%' }}>
+            Hubo un error, consultar la consola y reportarlo &nbsp;
+            <a href="https://github.com/enzo418/buscador-meli/tree/master">aqui</a>
+            &nbsp; o intentalo nuevamente
+          </Alert>
+        </Snackbar>
       </Box>
     );
   }

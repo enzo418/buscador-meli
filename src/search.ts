@@ -87,7 +87,12 @@ export default async function SearchMeli(items: string[], client: IHttpClient, d
     return new Promise(async (resolve, reject) => {
         if (items.length === 0) resolve([]);
 
-        const ids: string[] = Array.from(await GetIdsOfItemSellers(client, items[0], 0));
+        let ids: string[] = [];
+        try {
+            ids = Array.from(await GetIdsOfItemSellers(client, items[0], 0));
+        } catch (error) {
+            reject(error);
+        }
 
         const promises = ids.map((seller_id: any) => {
             return new Promise(async (resolve2, reject2) => {
