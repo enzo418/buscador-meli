@@ -3,6 +3,10 @@ Esta aplicación te permite realizar una busqueda avanzada en mercadolibre. En e
 
 [Demo](https://enzo418.github.io/buscador-meli/)
 
+## Uso
+Agregas los items y luego buscar. Una vez que se obtienen los resultados, se marcaran con color si para ese vendedor se encotraron todos los items bucados.
+En cada fila aparece un link el cual te lleva a la página de mercadolibre con el listado del vendedor, ahí podes buscar cada uno nuevamente marcando el checkbox de "Solo de este vendedor" para elegir el que necesitas.
+
 ## Uso de la api de ML
 Este solo utiliza la api publica de mercadolibre para realizar las busquedas, no se almacena ningun dato.
 
